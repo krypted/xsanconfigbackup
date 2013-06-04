@@ -36,7 +36,7 @@ emailServer="smtp.nameserver.com"
 # emailUserPassword="<password>" 
 # 
 ## 
-# DON'T CHANGE THIS NEXT STUFF UNLESS YOU KNOW WHAT YOU ARE DOING OR AT LEAST THINK YOU KNOW -- 
+# CHANGE THE FOLLOWING AT YOUR OWN RISK 
 ## 
 # 
 # Actions -- 
