@@ -45,12 +45,15 @@ cd /cvgathers/`date +%F`/
 /Library/Filesystems/Xsan/bin/cvgather -f $XsanVol1 > /Library/Logs/`date +%F`-integrity.log 
 cd /Library/Filesystems/Xsan/ 
 /usr/bin/ditto -ck --keepParent /Library/Filesystems/Xsan/config /config-files/`date +%F`.zip 
+/usr/sbin/cvlabel -l > /Library/Logs/`date +%F`-cvlabels.log
 # 
 # Email the logs -- 
 # 
 logfile=`more /Library/Logs/*-integrity.log` 
+cvlogfile=`more /Library/Logs/cvlog.log` 
 # 
 /usr/local/bin/sendEmail -f "$emailFrom" -t "$emailTo" -u "$emailSubject" -m "$logfile" -s "$emailServer" #! -xu "$emailUserName" -xp "$emailUserPassword" 
+/usr/local/bin/sendEmail -f "$emailFrom" -t "$emailTo" -u "$emailSubject" -m "$cvlogfile" -s "$emailServer" #! -xu "$emailUserName" -xp "$emailUserPassword" 
 # 
 # END 
 # 
